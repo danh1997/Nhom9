@@ -3,6 +3,7 @@ using System.Data.Entity;
 using Abp.Zero.EntityFramework;
 using HuflitBigPrj.Authorization.Roles;
 using HuflitBigPrj.Authorization.Users;
+using HuflitBigPrj.Models;
 using HuflitBigPrj.MultiTenancy;
 
 namespace HuflitBigPrj.EntityFramework
@@ -16,6 +17,18 @@ namespace HuflitBigPrj.EntityFramework
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not
          *   pass connection string name to base classes. ABP works either way.
          */
+        public DbSet<SalesOrder> SalesOrders { get; set; }
+        public DbSet<SalesOrderDetail> SalesOrderDetails { get; set; }
+        public DbSet<InvoiceType> InvoiceTypes { get; set; }
+        public DbSet<Inventory> Inventories  { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
+        public DbSet<StockDetail> StockDetails { get; set; }
+        public DbSet<StockTransfer> StockTranfers { get; set; }
+        public DbSet<StockTransDetail> StockTransDetails { get; set; }
+        public DbSet<CheckStock> CheckStocks { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+
         public HuflitBigPrjDbContext()
             : base("Default")
         {
